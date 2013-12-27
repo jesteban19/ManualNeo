@@ -143,6 +143,17 @@ class postController extends Controller
 		$this->_post->setContent($this->getPostParam('content'),$this->getInt('idpost'));
 	}
 
+	public function uploadFile(){
+		$dir = ROOT.'tmp/files/';
+		move_uploaded_file($_FILES['file']['tmp_name'], $dir.$_FILES['file']['name']);
+
+		$array = array(
+		    'filelink' => SITE_URL.'tmp/files/'.$_FILES['file']['name'],
+		    'filename' => $_FILES['file']['name']
+		);
+
+		echo stripslashes(json_encode($array));
+	}
 
 	/**
 	 * Cuando se copia una imagen al editor de texto se sube al sitio

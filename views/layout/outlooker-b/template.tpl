@@ -262,6 +262,7 @@
 <script type="text/javascript" src="{$_layoutParams.ruta_js}validate/jquery.validate.min.js"></script>
 <!--<script type="text/javascript" src="{$_layoutParams.ruta_js}bootstrap-wysihtml5-0.0.2.js"></script>-->
 <script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/redactor.js"></script>
+<script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/plugins/emoticon.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/langs/es.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}custom.js"></script>
 <script type="text/javascript">

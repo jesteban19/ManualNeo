@@ -55,6 +55,7 @@
                <div class="form-group">
                 <div class="col-md-offset-3 col-md-9">
                  <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Guardar Cambios</button>
+                 <button id="btn-Line" class="btn btn-default">Font Size</button>
                  <input type="hidden" name="idpost" value="{$post.idpost}">
                  <input type="hidden" name="plug" value="{$post.plug}">
                </div>
