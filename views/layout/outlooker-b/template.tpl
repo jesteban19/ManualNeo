@@ -14,7 +14,7 @@
   <![endif]-->
   
   <!-- Google Web Font -->
-  <!--<link href='http://fonts.googleapis.com/css?family=Dosis:200,400,600' rel='stylesheet' type='text/css'>-->
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,400,600' rel='stylesheet' type='text/css'>
   
   <!-- Stylesheets -->
   <link href="{$_layoutParams.ruta_css}bootstrap.css" rel="stylesheet">
@@ -37,6 +37,7 @@
   <!--<link rel="stylesheet" type="text/css" href="{$_layoutParams.ruta_css}bootstrap-wysihtml5-0.0.2.css">-->
   <link rel="stylesheet" href="{$_layoutParams.ruta_css}redactor.css">
   <link rel="stylesheet" type="text/css" href="{$_layoutParams.ruta_css}tagmanager.css">
+ <link rel="stylesheet" type="text/css" href="{$_layoutParams.ruta_css}nprogress.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="{$_layoutParams.ruta_img}favicon.ico">
 </head>
@@ -253,6 +254,7 @@
 
 <!-- JS -->
 <script src="{$_layoutParams.ruta_js}jquery.js"></script>
+<script src="{$_layoutParams.ruta_js}nprogress.js"></script>
 <script src="{$_layoutParams.ruta_js}easing.js"></script>
 <script src="{$_layoutParams.ruta_js}wysihtml5-0.3.0.js"></script>
 <script src="{$_layoutParams.ruta_js}bootstrap.js"></script>
@@ -273,6 +275,14 @@
 <script type="text/javascript">
   var BASE_URL="{$_layoutParams.base_url}";
   var SITE_URL="{$_layoutParams.site_url}";
+</script>
+<script type="text/javascript">
+   $('body').show();
+    NProgress.start();
+    $(function() {
+      NProgress.done(); 
+      $('.fade').removeClass('out');
+    });
 </script>
 
 <!-- load Js -->

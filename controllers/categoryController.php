@@ -29,6 +29,11 @@ class categoryController extends Controller{
 			$this->_view->assign('blank',true);
 		}
 
+		for($i=0;$i<count($post);$i++){
+			$post[$i]['created']=$this->timeago(strtotime($post[$i]['created']));		
+			if($post[$i]['last_editing']!=null)
+				$post[$i]['last_editing']="Actualizado ".$this->timeago(strtotime($post[$i]['last_editing']));
+		}
 
 		$this->_view->assign('titulo',$category.' | Manuales Docs. ZeusIntranet V1');		
 		$this->_view->assign('post',$post);

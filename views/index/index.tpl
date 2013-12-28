@@ -25,6 +25,7 @@
         <p>{$row.sub_title}</p>
         <p><a class="btn btn-default" href="{$_layoutParams.base_url}post/{$row.plug}-{$row.idpost}"> <i class="fa fa-arrow-right"></i> Leer Manual...</a>
         <a href="{$_layoutParams.base_url}post/exportPdf/{$row.idpost}" class="btn btn-success"><i class="fa fa-paperclip"></i> Descargar PDF</a>
+        <code>{$row.last_editing}</code>
         </p>
 
       </div>

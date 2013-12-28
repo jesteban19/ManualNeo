@@ -15,7 +15,7 @@
 
         &nbsp;<i class="fa fa-tags"></i>
         {foreach item=r from=$tags}
-           <a href="#">{$r}</a>,
+           <code><a href="#" class="book-tags">{$r}</a></code>
         {/foreach}
           - &nbsp;<i class="fa fa-eye"></i>{$row.views}
           - &nbsp;<i class="fa fa-thumbs-o-up"></i>{$row.like}
@@ -25,7 +25,10 @@
         <!--<p class="thumbnail"><img src="{$_layoutParams.ruta_img}photos/s2.jpg" alt="" class="img-responsive" /></p>-->
 
         <p>{$row.sub_title}</p>
-        <p><a class="btn btn-default" href="{$_layoutParams.base_url}post/{$row.plug}-{$row.idpost}"> <i class="fa fa-arrow-right"></i> Leer Manual...</a></p>
+        <p><a class="btn btn-default" href="{$_layoutParams.base_url}post/{$row.plug}-{$row.idpost}"> <i class="fa fa-arrow-right"></i> Leer Manual...</a>
+         <a href="{$_layoutParams.base_url}post/exportPdf/{$row.idpost}" class="btn btn-success"><i class="fa fa-paperclip"></i> Descargar PDF</a>
+        <code>{$row.last_editing}</code>
+        </p>
       </div>
     {/foreach}
     
