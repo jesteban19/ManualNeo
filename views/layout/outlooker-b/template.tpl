@@ -88,7 +88,6 @@
                 <div id="ddtopmenubar" class="mattblackmenu">
                   <!-- Main navigation -->
                   <ul>
-                    <li><a href="{$_layoutParams.base_url}">Inicio</a></li>
                     <!-- Main navigation -->
                     <li><a href="blog.html" rel="ddsubmenu2">Manuales</a>
                       <!-- Sub Navigation -->
@@ -142,7 +141,7 @@
                 <div class="matter">
                   <!-- Search form -->
                   <form class="form-inline" action="{$_layoutParams.base_url}index/search" method="post">
-                    <input type="text" {if isset($search)} value="{$search}" {/if} name="search" class="form-control" autocomplete="off" placeholder="Titulo,formulario,acci&oacute;n...">
+                    <input type="text" {if isset($search)} value="{$search}" {/if} name="search" class="form-control search-form" autocomplete="off" placeholder="Titulo,formulario,acci&oacute;n...">
                   </form>
                 </div>
               </div>

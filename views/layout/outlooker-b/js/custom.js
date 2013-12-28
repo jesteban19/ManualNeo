@@ -23,7 +23,16 @@ $(document).ready(function(){
       };
       
   $().UItoTop({ easingType: 'easeOutQuart' });
-  
+
+  $(".book-tags").each(function(i,element){
+    return $(element).each(function(i,ele){
+      $(ele).click(function(e){
+        $(".search-form").val($(this).text());
+        $(".search-form").parent('form').submit();
+        e.preventDefault();
+      });
+    });
+  });
 });
 
 /* prettyPhoto Gallery */
