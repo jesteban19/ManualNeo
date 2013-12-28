@@ -27,6 +27,7 @@
 
   <link href="{$_layoutParams.ruta_css}ddlevelsmenu-base.css" rel="stylesheet">
   <link href="{$_layoutParams.ruta_css}ddlevelsmenu-topbar.css" rel="stylesheet">
+  <link href="{$_layoutParams.ruta_css}ui.totop.css" rel="stylesheet">
   <link href="{$_layoutParams.ruta_css}style.css" rel="stylesheet">
   <!-- Change the template color below. Supported colors blue,red and green. -->
   <link href="{$_layoutParams.ruta_css}blue.css" rel="stylesheet">
@@ -140,8 +141,8 @@
                 <!-- Sidebar content should be enclosed inside div with the class "matter". -->
                 <div class="matter">
                   <!-- Search form -->
-                  <form class="form-inline">
-                    <input type="text" class="form-control" placeholder="Titulo,formulario,acci&oacute;n..."> 
+                  <form class="form-inline" action="{$_layoutParams.base_url}index/search" method="post">
+                    <input type="text" {if isset($search)} value="{$search}" {/if} name="search" class="form-control" autocomplete="off" placeholder="Titulo,formulario,acci&oacute;n...">
                   </form>
                 </div>
               </div>
@@ -263,6 +264,7 @@
 <script type="text/javascript" src="{$_layoutParams.ruta_js}flexslider.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}isotope.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="{$_layoutParams.ruta_js}jquery.ui.totop.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}validate/jquery.validate.min.js"></script>
 <!--<script type="text/javascript" src="{$_layoutParams.ruta_js}bootstrap-wysihtml5-0.0.2.js"></script>-->
 <script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/redactor.js"></script>

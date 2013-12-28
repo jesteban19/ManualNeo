@@ -32,6 +32,7 @@
     
     <!-- Navigation links -->
     {if !isset($blank)}
+    {if isset($page)}
     <ul class="pager">
       {if $page!=1}
       <li class="previous">
@@ -43,6 +44,7 @@
         <a href="{$_layoutParams.base_url}index/{$page+1}">Siguiente &rarr;</a>
       </li>
     </ul>
+    {/if}
     {/if}
   </div><!-- end posts -->
   <!-- Main Content Ends Here -->

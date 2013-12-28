@@ -27,6 +27,13 @@ class postModel extends Model
 		return $data->fetchAll();
 	}
 
+	public function search($key){
+		$data=$this->_db->prepare(
+			"select * from post where titulo like concat('%',:key,'%')  or sub_title like concat('%',:key,'%') or content like concat('%',:key,'%') or tags like concat('%',:key,'%')"
+			);
+		$data->execute(array(':key' => $key));
+		return $data->fetchAll();
+	}
 	public function add($titulo,$subtitulo,$plug,$categoria,$contenido,$tags,$iduser){
 		$data=$this->_db->prepare(
 			"insert into post(titulo,sub_title,content,plug,created,post.like,dislike,views,state,tags,idusers,idcategory)values
