@@ -23,7 +23,10 @@
         <!--<p class="thumbnail"><img src="{$_layoutParams.ruta_img}photos/s2.jpg" alt="" class="img-responsive" /></p>-->
 
         <p>{$row.sub_title}</p>
-        <p><a class="btn btn-default" href="{$_layoutParams.base_url}post/{$row.plug}-{$row.idpost}"> <i class="fa fa-arrow-right"></i> Leer Manual...</a></p>
+        <p><a class="btn btn-default" href="{$_layoutParams.base_url}post/{$row.plug}-{$row.idpost}"> <i class="fa fa-arrow-right"></i> Leer Manual...</a>
+        <a href="{$_layoutParams.base_url}post/exportPdf/{$row.idpost}" class="btn btn-success"><i class="fa fa-paperclip"></i> Descargar PDF</a>
+        </p>
+
       </div>
     {/foreach}
     
