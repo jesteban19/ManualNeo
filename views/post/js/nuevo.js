@@ -1,29 +1,16 @@
 $(function () {
 	//$('#contenido').wysihtml5();
 	$('#contenido').redactor({
+        plugins : ['btn_success','fullscreen'],
+        linebreaks : true,
 		lang : 'es',
+        linkNofollow: true,
 		tabSpaces: 4,
         fileUpload : BASE_URL+'post/uploadFile',
 		imageUpload : BASE_URL+'post/uploadImage',
-        clipboardUploadUrl : BASE_URL+'post/uploadCopyImage',
-		buttonsAdd: ['|', 'pre'],
-        activeButtonsAdd: {
-            pre: 'pre'
-        },
-        buttonsCustom: {
-            pre: {
-                title: 'Code',
-                callback: function()
-                {
-                    this.formatBlocks('pre');
-                }
-            }
-        }
+        clipboardUploadUrl : BASE_URL+'post/uploadCopyImage'
 	});
-    $("#btn-Line").click(function(e){
-        e.preventDefault();
-       $('#contenido').redactor('inlineFormat', 'span');
-    });
+
     //validar
     $("#frm-entrada").validate({
         rules: {
@@ -36,4 +23,11 @@ $(function () {
             subtitulo : "Necesita escribir una descripci&oacute;n"
         }
     });
+
+    $(".tm-input").tagsManager({
+        tagClass : 'tm-tag tm-tag-info',
+        tagCloseIcon : '×',
+        output : "#hidden-tags"
+    });
+
 });

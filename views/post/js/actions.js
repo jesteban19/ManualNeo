@@ -40,23 +40,13 @@ $(function(){
 		$("#btn-delete").hide();
 		$(this).hide();
 		$("#content_post").redactor({
+			plugins : ['btn_success'],
+			linkNofollow: true,
+			linebreaks : true,
         	lang : 'es',
         	focus : true,
 			tabSpaces: 4,
-			imageUpload : BASE_URL+'post/uploadImage',
-			buttonsAdd: ['|', 'pre'],
-	        activeButtonsAdd: {
-	            pre: 'pre'
-	        },
-	        buttonsCustom: {
-	            pre: {
-	                title: 'Code',
-	                callback: function()
-	                {
-	                    this.formatBlocks('pre');
-	                }
-	            }
-	        }
+			imageUpload : BASE_URL+'post/uploadImage'
     	});
 	});
 

@@ -44,7 +44,7 @@ abstract class Controller
 		if(is_readable($rutaLibreria)){
 			require_once $rutaLibreria;
 		}else{
-			throw new Exception("Error al cargar la libreria ".$librera, 1);
+			throw new Exception("Error al cargar la libreria ".$libreria, 1);
 		}
 	}
 

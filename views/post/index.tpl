@@ -12,7 +12,7 @@
 
       &nbsp;<i class="fa fa-tags"></i>
       {foreach item=r from=$tags}
-      <a href="#">{$r}</a>,
+      <code><a href="#">{$r}</a></code>
       {/foreach}
 
       - &nbsp;<i class="fa fa-eye"></i>{$post.views}
@@ -36,6 +36,7 @@
         <button class="btn btn-success" id="btn-like" data-idpost="{$post.idpost}"><i class="fa fa-thumbs-o-up"></i> Ayuda!</button>
         <button class="btn btn-default"  id="btn-dislike" data-idpost="{$post.idpost}"><i class="fa fa-thumbs-o-down"></i> No me ayuda</button>
         {if Session::get('privilegio')!='Lector'}
+        <a href="{$_layoutParams.base_url}post/exportPdf/{$post.idpost}" class="btn btn-primary"><i class="fa fa-paperclip"></i> Exportar PDF</a>
         <button class="btn btn-warning" id="btn-editar"><i class="fa fa-edit"></i> Edici&oacute;n R&aacute;pida</button>        
         <a class="btn btn-info" href="{$_layoutParams.base_url}post/edit/{$post.idpost}"><i class="fa fa-cog"></i> Editar</a>
         <button class="btn btn-primary" id="btn-save" data-idpost="{$post.idpost}" style="display:none;"><i class="fa fa-check"></i> Guardar</button>

@@ -48,8 +48,8 @@
                 <div class="form-group">
                  <label class="control-label col-md-3" for="tags">Tags</label>
                  <div class="col-md-9">
-                   <input type="text" class="form-control" name="tags" id="tags">
-                   <p class="help-block">Agregue "tags" separando por comas (,) . Ejemplo : docs,colegio,videos,images...</p>
+                   <input type="text" class="form-control tm-input" placeholder="Ingrese Tags..." autocomplete="off" id="tags" />
+                   <input type="hidden" name="tags"  id="hidden-tags" />
                  </div>
                </div>
                <div class="form-group">

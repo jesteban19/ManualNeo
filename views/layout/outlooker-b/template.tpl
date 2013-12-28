@@ -35,6 +35,7 @@
   <link href="{$_layoutParams.ruta_css}prettyPhoto.css" rel="stylesheet">
   <!--<link rel="stylesheet" type="text/css" href="{$_layoutParams.ruta_css}bootstrap-wysihtml5-0.0.2.css">-->
   <link rel="stylesheet" href="{$_layoutParams.ruta_css}redactor.css">
+  <link rel="stylesheet" type="text/css" href="{$_layoutParams.ruta_css}tagmanager.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="{$_layoutParams.ruta_img}favicon.ico">
 </head>
@@ -255,6 +256,9 @@
 <script src="{$_layoutParams.ruta_js}easing.js"></script>
 <script src="{$_layoutParams.ruta_js}wysihtml5-0.3.0.js"></script>
 <script src="{$_layoutParams.ruta_js}bootstrap.js"></script>
+<script src="{$_layoutParams.ruta_js}bootstrap-typehead.js"></script>
+<script type="text/javascript" src="{$_layoutParams.ruta_js}jquery.color.js"></script>
+<script type="text/javascript" src="{$_layoutParams.ruta_js}bootstrap-tags.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}ddlevelsmenu.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}flexslider.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}isotope.js"></script>
@@ -262,7 +266,7 @@
 <script type="text/javascript" src="{$_layoutParams.ruta_js}validate/jquery.validate.min.js"></script>
 <!--<script type="text/javascript" src="{$_layoutParams.ruta_js}bootstrap-wysihtml5-0.0.2.js"></script>-->
 <script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/redactor.js"></script>
-<script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/plugins/emoticon.js"></script>
+<script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/plugins/plugin.neo.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}redactor/langs/es.js"></script>
 <script type="text/javascript" src="{$_layoutParams.ruta_js}custom.js"></script>
 <script type="text/javascript">

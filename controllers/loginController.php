@@ -9,6 +9,13 @@ class loginController extends Controller{
 	}
 
 	public function index(){
+		if(isset($_GET['request']))
+		{
+			Session::set('requestUrl',$_GET['request']);
+		}else{
+			Session::destroy('requestUrl');
+		}
+
 		$this->_view->renderizar('index',false,false,'login');
 	}
 
@@ -16,7 +23,7 @@ class loginController extends Controller{
 		if(!$this->getSql('usuario') && !$this->getSql('password')){			
 			exit;
 		}
-
+		
 		$log=$this->_login->auth($this->getSql('usuario'),$this->getSql('password'));
 		if(count($log)>0){
 			$login_user=$log[0]['username'];
@@ -47,7 +54,12 @@ class loginController extends Controller{
 				$login_privilegio='Lector';
 			}else{ 				
 				//mandamos al login de nuevo no existe
-				$this->redireccionar('login');
+				if(Session::get('requestUrl')){
+					$this->redireccionar('login?request='.Session::get('requestUrl'));
+				}else{
+					$this->redireccionar('login');
+				}
+				
 			}
 		}
 		
@@ -55,7 +67,11 @@ class loginController extends Controller{
 		Session::set('login',true);
 		Session::set('usuario',$login_user);
 		Session::set('privilegio',$login_privilegio);
-		$this->redireccionar();
+		if(Session::get('requestUrl')){
+			$this->redireccionar(Session::get('requestUrl'));
+		}else{
+			$this->redireccionar();
+		}	
 
 	}
 

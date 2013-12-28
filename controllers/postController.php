@@ -7,9 +7,7 @@ class postController extends Controller
 
 	public function __construct(){
 		parent::__construct();
-		if(!Session::get('login')){
-			$this->redireccionar('login');
-		}
+		
 		$this->_post=$this->loadModel('post');
 		$this->_category=$this->loadModel('category');
 		$this->_comment=$this->loadModel('comment');
@@ -21,6 +19,11 @@ class postController extends Controller
 	}
 	public function index($plug="-1")
 	{	
+
+		if(!Session::get('login')){
+			//devolvemos al request el post solicitado
+			$this->redireccionar('login?request=post/'.$plug);
+		}
 
 		//cargamos funciones javascript
 		$this->_view->setJs(array('actions'));
@@ -46,6 +49,26 @@ class postController extends Controller
 		$this->_view->assign('lastPost',$this->_post->select(5));
 		$this->_view->assign('menuCategory',$this->_category->select());
 		$this->_view->renderizar('index');
+	}
+
+	public function exportPdf($idpost=0){		
+		$idpost=$this->filtrarInt($idpost);
+		if($idpost!=0){
+			$post=$this->_post->getId($idpost);
+			if(!isset($post['idpost'])){
+				$this->redireccionar();
+			}
+			$this->getLibrary('dompdf/dompdf_config.inc');
+			$html =utf8_decode($post['content']);
+			$dompdf = new DOMPDF();
+			$dompdf->load_html($html);
+			$dompdf->set_paper('a4', 'portrait');
+			$dompdf->render();
+			$dompdf->stream($post['titulo'].".pdf", array("Attachment" => true));
+		}else{
+			$this->redireccionar();
+		}
+		
 	}
 
 	public function nuevo(){	
@@ -88,6 +111,9 @@ class postController extends Controller
 		if($idpost!=0){
 			$this->_view->setJs(array('nuevo'));
 			$post=$this->_post->getId($idpost);
+			if(!isset($post['idpost'])){
+				$this->redireccionar();
+			}
 			$this->_view->assign('titulo','Editando Manual | Manuales Docs. ZeusIntranet V1');		
 			$this->_view->assign('post',$post);
 			$this->_view->assign('lastPost',$this->_post->select(5));

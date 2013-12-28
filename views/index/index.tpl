@@ -13,7 +13,7 @@
 
         &nbsp;<i class="fa fa-tags"></i>
         {foreach item=r from=$tags}
-           <a href="#">{$r}</a>,
+           <code><a href="#">{$r}</a></code>
         {/foreach}
           - &nbsp;<i class="fa fa-eye"></i>{$row.views}
           - &nbsp;<i class="fa fa-thumbs-o-up"></i>{$row.like}
